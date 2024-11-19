@@ -8,11 +8,10 @@ import {
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
-  selector: 'pricing-page',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './pricing-page.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'pricing-page',
+    imports: [CommonModule],
+    templateUrl: './pricing-page.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PricingPageComponent implements OnInit {
   private readonly title = inject(Title);
