@@ -23,7 +23,14 @@ export const routes: Routes = [
       ),
   },
   {
+    path: '404',
+    loadComponent: () =>
+      import('./pages/404/404/page-404.component').then(
+        (m) => m.Page404Component
+      ),
+  },
+  {
     path: '**',
-    redirectTo: 'about',
+    redirectTo: '404',
   },
 ];
