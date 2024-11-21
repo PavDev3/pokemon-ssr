@@ -1,28 +1,37 @@
 import { CommonModule } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  OnInit,
-} from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+interface ContactForm {
+  name: string;
+  email: string;
+  message: string;
+}
 
 @Component({
-    selector: 'contact-page',
-    imports: [CommonModule],
-    templateUrl: './contact-page.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-contact-page',
+  standalone: true,
+  imports: [CommonModule, FormsModule],
+  templateUrl: './contact-page.component.html',
 })
-export class ContactPageComponent implements OnInit {
-  private readonly title = inject(Title);
-  private readonly meta = inject(Meta);
+export class ContactPageComponent {
+  contactData: ContactForm = {
+    name: '',
+    email: '',
+    message: '',
+  };
 
-  ngOnInit() {
-    this.title.setTitle('Contact');
-    this.meta.updateTag({ name: 'description', content: 'Contact page' });
-    this.meta.updateTag({
-      name: 'keywords',
-      content: 'contact, page, Angular, Tailwind, TypeScript',
-    });
+  onSubmit() {
+    // Aquí puedes implementar la lógica para enviar el email
+    // Por ahora, solo abriremos el cliente de correo predeterminado
+    const mailtoLink = `mailto:pnunfe@gmail.com?subject=Contacto de ${this.contactData.name}&body=${this.contactData.message}%0A%0ADe: ${this.contactData.email}`;
+    window.location.href = mailtoLink;
+
+    // Limpiamos el formulario
+    this.contactData = {
+      name: '',
+      email: '',
+      message: '',
+    };
   }
 }

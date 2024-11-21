@@ -1,28 +1,10 @@
 import { CommonModule } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  OnInit,
-} from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'about-page',
-    imports: [CommonModule],
-    templateUrl: './about-page.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-about-page',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './about-page.component.html',
 })
-export class AboutPageComponent implements OnInit {
-  private readonly title = inject(Title);
-  private readonly meta = inject(Meta);
-
-  ngOnInit() {
-    this.title.setTitle('About');
-    this.meta.updateTag({ name: 'description', content: 'About page' });
-    this.meta.updateTag({
-      name: 'keywords',
-      content: 'about, page, Angular, Tailwind, TypeScript',
-    });
-  }
-}
+export class AboutPageComponent {}
