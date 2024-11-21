@@ -31,15 +31,8 @@ export class PokemonsComponent {
         .then((res) => res.json())
         .then((data) =>
           data.results.map((pokemon: PokemonListResponse) => ({
-            id: pokemon.id,
             name: pokemon.name,
-            sprites: {
-              other: {
-                'official-artwork': {
-                  front_default: pokemon.url,
-                },
-              },
-            },
+            url: pokemon.url,
           }))
         ),
   });
