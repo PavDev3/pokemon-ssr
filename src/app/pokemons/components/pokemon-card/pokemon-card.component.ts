@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { Pokemon } from './../../interfaces/pokemon.interface';
 
 @Component({
   selector: 'pokemon-card',
@@ -7,4 +8,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './pokemon-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PokemonCardComponent {}
+export class PokemonCardComponent {
+  pokemon = input.required<Pokemon>({ alias: 'pokemon' });
+}
