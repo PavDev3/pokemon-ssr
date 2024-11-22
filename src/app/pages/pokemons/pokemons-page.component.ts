@@ -7,7 +7,6 @@ import {
   signal,
 } from '@angular/core';
 import { PokemonCardComponent } from '../../pokemons/components/pokemon-card/pokemon-card.component';
-import { PokemonListSkeletonComponent } from '../../pokemons/components/ui/pokemon-list-skeleton/pokemon-list-skeleton.component';
 import {
   Pokemon,
   PokemonListResponse,
@@ -15,7 +14,7 @@ import {
 
 @Component({
   selector: 'pokemons-page',
-  imports: [CommonModule, PokemonListSkeletonComponent, PokemonCardComponent],
+  imports: [CommonModule, PokemonCardComponent],
   templateUrl: './pokemons-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
