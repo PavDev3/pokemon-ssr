@@ -9,7 +9,7 @@
   }
 </div>
 
-<div class="flex justify-between mt-4">
+<div class="flex justify-between items-center mt-4">
   <button
     (click)="previousPage()"
     [disabled]="offset() === 0"
@@ -17,6 +17,18 @@
   >
     Anterior
   </button>
+
+  <div class="flex gap-2">
+    @for (page of getPages(); track page) {
+    <button
+      (click)="goToPage(page)"
+      [class.bg-blue-600]="offset() / 21 + 1 === page"
+      class="px-3 py-1 rounded bg-blue-500 text-white hover:bg-blue-600 transition-all"
+    >
+      {{ page }}
+    </button>
+    }
+  </div>
 
   <button
     (click)="nextPage()"

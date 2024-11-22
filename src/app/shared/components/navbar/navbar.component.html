@@ -1,22 +1,30 @@
-<nav
-  class="top-0 absolute z-50 w-full flex justify-end px-2 py-3 bg-slate-900 shadow-md text-white gap-4"
->
-  <a
-    class="hover:underline"
-    routerLinkActive="text-blue-500 underline"
-    routerLink="/pokemons"
-    >Pokemons</a
-  >
-  <a
-    class="hover:underline"
-    routerLinkActive="text-blue-500 underline"
-    routerLink="/about"
-    >About</a
-  >
-  <a
-    class="hover:underline"
-    routerLinkActive="text-blue-500 underline"
-    routerLink="/contact"
-    >Contact</a
-  >
+<nav class="flex items-center justify-between p-4 bg-blue-500 shadow-md">
+  <div class="flex items-center gap-2">
+    <img
+      src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
+      alt="PokeAPI Logo"
+      class="h-8 bg-white rounded-lg p-1"
+    />
+  </div>
+
+  <div class="flex gap-4">
+    <a
+      routerLink="/pokemons"
+      class="text-white hover:text-gray-200 transition-colors"
+    >
+      Pokemons
+    </a>
+    <a
+      routerLink="/about"
+      class="text-white hover:text-gray-200 transition-colors"
+    >
+      About
+    </a>
+    <a
+      routerLink="/contact"
+      class="text-white hover:text-gray-200 transition-colors"
+    >
+      Contact
+    </a>
+  </div>
 </nav>
