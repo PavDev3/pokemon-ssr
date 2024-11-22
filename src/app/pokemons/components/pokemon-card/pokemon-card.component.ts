@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
-  effect,
   input,
   resource,
 } from '@angular/core';
@@ -28,10 +27,4 @@ export class PokemonCardComponent {
           sprites: data.sprites,
         })),
   });
-
-  constructor() {
-    effect(() => {
-      console.log(this.pokemon());
-    });
-  }
 }
