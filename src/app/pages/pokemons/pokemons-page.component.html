@@ -1,5 +1,5 @@
 <h1 class="text-2xl font-bold">Pokemons</h1>
-<h2 class="text-xl">Página actual: {{ offset() / 21 + 1 }}</h2>
+<h2 class="text-xl">Page: {{ offset() / 21 + 1 }}</h2>
 
 <hr class="my-2" />
 
@@ -15,7 +15,7 @@
     [disabled]="offset() === 0"
     class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 disabled:bg-slate-600 transition-all"
   >
-    Anterior
+    Back
   </button>
 
   <div class="flex gap-2">
@@ -34,6 +34,6 @@
     (click)="nextPage()"
     class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 disabled:bg-slate-600 transition-all"
   >
-    Siguiente
+    Next
   </button>
 </div>
