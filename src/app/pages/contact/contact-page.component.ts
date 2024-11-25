@@ -22,12 +22,9 @@ export class ContactPageComponent {
   };
 
   onSubmit() {
-    // Aquí puedes implementar la lógica para enviar el email
-    // Por ahora, solo abriremos el cliente de correo predeterminado
     const mailtoLink = `mailto:pnunfe@gmail.com?subject=Contacto de ${this.contactData.name}&body=${this.contactData.message}%0A%0ADe: ${this.contactData.email}`;
     window.location.href = mailtoLink;
 
-    // Limpiamos el formulario
     this.contactData = {
       name: '',
       email: '',
