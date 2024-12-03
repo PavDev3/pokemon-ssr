@@ -11,6 +11,7 @@ export interface PokemonListResponse {
 
 export interface PokemonResult {
   name: string;
+  url: string;
   sprites: {
     other: {
       'official-artwork': {

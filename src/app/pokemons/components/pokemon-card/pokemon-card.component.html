@@ -1,5 +1,8 @@
-<div class="card p-4 border rounded-lg shadow-md">
-  @if (pokemonResource.value(); as pokemon){
+<div
+  class="card p-4 border rounded-lg shadow-md"
+  [routerLink]="['/pokemons', pokemon().name]"
+>
+  @if (pokemonResource.value(); as pokemon) {
   <img
     [src]="pokemon.sprites.other['official-artwork'].front_default"
     class="w-32 h-32 mx-auto"

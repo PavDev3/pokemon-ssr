@@ -5,12 +5,13 @@ import {
   input,
   resource,
 } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { Pokemon, PokemonResult } from '../../interfaces/pokemons.interface';
 import { PokemonListSkeletonComponent } from '../ui/pokemon-list-skeleton/pokemon-list-skeleton.component';
-import { Pokemon, PokemonResult } from './../../interfaces/pokemon.interface';
 
 @Component({
   selector: 'pokemon-card',
-  imports: [CommonModule, PokemonListSkeletonComponent],
+  imports: [CommonModule, PokemonListSkeletonComponent, RouterLink],
   templateUrl: './pokemon-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
