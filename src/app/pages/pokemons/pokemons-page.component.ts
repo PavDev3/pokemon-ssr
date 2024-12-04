@@ -18,6 +18,7 @@ import { PokemonsService } from '../../pokemons/services/pokemons.service';
 })
 export class PokemonsComponent {
   private pokemonsService = inject(PokemonsService);
+
   public offset = signal(0);
   public pokemonList = signal<Pokemon[]>([]);
 

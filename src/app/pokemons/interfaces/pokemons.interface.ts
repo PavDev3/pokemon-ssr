@@ -12,11 +12,19 @@ export interface PokemonListResponse {
 export interface PokemonResult {
   name: string;
   url: string;
+  stats: PokemonStats[];
   sprites: {
     other: {
       'official-artwork': {
         front_default: string;
       };
     };
+  };
+}
+
+export interface PokemonStats {
+  base_stat: number;
+  stat: {
+    name: string;
   };
 }
