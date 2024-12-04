@@ -1,5 +1,4 @@
 <div class="p-4 max-w-2xl mx-auto">
-  <!-- Botón de volver -->
   <button
     (click)="goBack()"
     class="mb-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors flex items-center gap-2"
@@ -16,7 +15,7 @@
         clip-rule="evenodd"
       />
     </svg>
-    Volver
+    Back
   </button>
 
   @if (pokemon(); as pokemon) {
@@ -24,7 +23,6 @@
     {{ pokemon.name }}
   </h2>
 
-  <!-- Imagen con borde -->
   <div class="border rounded-xl p-4 mb-6 shadow-sm">
     <img
       [src]="pokemon.sprites.other['official-artwork'].front_default"
@@ -33,7 +31,6 @@
     />
   </div>
 
-  <!-- Stats con barras de progreso -->
   <div class="border rounded-xl p-6 shadow-sm">
     <h3 class="text-xl font-bold mb-4 text-center capitalize">Stats</h3>
     <div class="space-y-4">
