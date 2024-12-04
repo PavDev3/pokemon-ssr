@@ -31,11 +31,9 @@ export class PokemonsService {
   pokemonDetailResource = resource({
     request: this.pokemonResult,
     loader: async ({ request: pokemon }) => {
-      console.log('Pokemon URL:', pokemon?.url);
       return fetch(pokemon?.url ?? '')
         .then((res) => res.json())
         .then((data: PokemonResult) => {
-          console.log('Pokemon Details:', data);
           return {
             name: data.name,
             url: data.url,

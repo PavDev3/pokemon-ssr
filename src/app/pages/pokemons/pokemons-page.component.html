@@ -1,18 +1,18 @@
 <h1 class="text-2xl font-bold">Pokemons</h1>
-<h2 class="text-xl">Page: {{ offset() / 21 + 1 }}</h2>
+<h2 class="text-xl">Page: {{ pokemonsService.offset() / 21 + 1 }}</h2>
 
 <hr class="my-2" />
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
   @for (pokemon of pokemonList(); track pokemon.name) {
-  <pokemon-card [pokemon]="pokemon" />
+  <pokemon-card [pokemon]="pokemon" (click)="infoPokemon(pokemon)" />
   }
 </div>
 
 <div class="flex justify-between items-center mt-4">
   <button
     (click)="previousPage()"
-    [disabled]="offset() === 0"
+    [disabled]="pokemonsService.offset() === 0"
     class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 disabled:bg-slate-600 transition-all"
   >
     Back
@@ -22,7 +22,7 @@
     @for (page of getPages(); track page) {
     <button
       (click)="goToPage(page)"
-      [class.bg-blue-600]="offset() / 21 + 1 === page"
+      [class.bg-blue-600]="pokemonsService.offset() / 21 + 1 === page"
       class="px-3 py-1 rounded bg-blue-500 text-white hover:bg-blue-600 transition-all"
     >
       {{ page }}

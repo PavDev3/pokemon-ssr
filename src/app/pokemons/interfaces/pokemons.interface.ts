@@ -2,6 +2,7 @@ export interface Pokemon {
   name: string;
   sprites: PokemonResult['sprites'];
   url: string;
+  stats: PokemonStats[];
 }
 
 export interface PokemonListResponse {

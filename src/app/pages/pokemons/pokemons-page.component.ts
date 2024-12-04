@@ -17,10 +17,18 @@ import { PokemonsService } from '../../pokemons/services/pokemons.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PokemonsComponent {
-  private pokemonsService = inject(PokemonsService);
-
-  public offset = signal(0);
+  public pokemonsService = inject(PokemonsService);
   public pokemonList = signal<Pokemon[]>([]);
+  public pokemonUrl = signal('');
+
+  get offset() {
+    return this.pokemonsService.offset;
+  }
+
+  infoPokemon(pokemon: Pokemon) {
+    const pokemonUrl = pokemon.url;
+    this.pokemonUrl.set(pokemonUrl);
+  }
 
   constructor() {
     effect(() => {
